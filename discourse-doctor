@@ -317,7 +317,7 @@ print_done() {
   if [ $app_name == 'app' ] && [ "$NO_CONTAINER" != 'y' ]
   then
     read -p "Would you like to serve a publicly available version of this file? (Y/n)" serve
-    if [ $serve == 'Y' ]
+    if [ "$serve" == 'Y' ]
     then
         cp $LOG_FILE shared/standalone/log/var-log/$DOCTOR_FILE
         sudo docker exec -w /var/www/discourse -i $app_name cp /var/log/$DOCTOR_FILE  public
